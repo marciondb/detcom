@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<DynamicNetwork>
+	<MetaNetwork>
+		<nodes>
+			<nodeclass type="esquema" id="esquema">
+				<node id="author">
+					<properties>
+						<property name="primeironome" type="string" value="primeironome"/>
+						<property name="ultimonome" type="string" value="ultimonome"/>
+						<property name="citacoes" type="real" value="citacoes"/>
+						<property name="publicacoes" type="real" value="publicacoes"/>
+					</properties>
+				</node>
+				<node id="paper">
+					<properties>
+						<property name="titulo" type="string" value="titulo"/>
+						<property name="ano" type="integer" value="ano"/>
+					</properties>
+				</node>
+			</nodeclass>
+		</nodes>
+		<networks>
+			<network sourceType="esquema" targetType="esquema" id="esquema x esquema" isDirected="false">
+				<link source="author" target="paper"/>
+			</network>
+		</networks>
+	</MetaNetwork>
+</DynamicNetwork>

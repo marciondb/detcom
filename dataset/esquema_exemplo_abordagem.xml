@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<DynamicNetwork>
+	<MetaNetwork>
+		<nodes>
+			<nodeclass type="esquema" id="esquema">
+				<node id="pessoa">
+					<properties>
+						<property name="nome" type="string" value="nome"/>
+						<property name="sexo" type="string" value="sexo"/>
+						<property name="idade" type="string" value="idade"/>
+					</properties>
+				</node>
+				<node id="ocorrencia">
+					<properties>
+						<property name="descricao" type="string" value="descricao"/>
+						<property name="latitude" type="real" value="latitude"/>
+						<property name="longitude" type="real" value="longitude"/>
+						<property name="dataHora" type="real" value="dataHora"/>
+					</properties>
+				</node>
+				<node id="item">
+					<properties>
+						<property name="descricao" type="string" value="descricao"/>
+					</properties>
+				</node>
+				<node id="tipoOcorrencia">
+					<properties>
+						<property name="descricao" type="string" value="descricao"/>
+					</properties>
+				</node>
+				<node id="delegacia">
+					<properties>
+						<property name="descricao" type="string" value="descricao"/>
+					</properties>
+				</node>
+			</nodeclass>
+		</nodes>
+		<networks>
+			<network sourceType="esquema" targetType="esquema" id="esquema x esquema" isDirected="false">
+				<link source="pessoa" target="ocorrencia"/>
+				<link source="ocorrencia" target="item"/>
+				<link source="ocorrencia" target="tipoOcorrencia"/>
+				<link source="ocorrencia" target="delegacia"/>
+			</network>
+		</networks>
+	</MetaNetwork>
+</DynamicNetwork>

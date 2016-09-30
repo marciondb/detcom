@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<DynamicNetwork>
+	<MetaNetwork>
+		<nodes>
+			<nodeclass type="esquema" id="esquema">
+				<node id="country">
+					<properties>
+						<property name="stateabb" type="string" value="stateabb"/>
+						<property name="statenme" type="string" value="statenme"/>
+						<property name="gdp" type="real" value="gdp"/>
+						<property name="gdp_growth" type="real" value="gdp_growth"/>
+						<property name="inflation" type="real" value="inflation"/>
+						<property name="population" type="real" value="population"/>
+						<property name="lat" type="real" value="lat"/>
+						<property name="long" type="real" value="long"/>
+					</properties>
+				</node>
+				<node id="disp">
+					<properties>
+						<property name="link1" type="string" value="link1"/>
+						<property name="link2" type="real" value="link3"/>
+						<property name="link3" type="real" value="link3"/>
+						<property name="stday" type="real" value="stday"/>
+						<property name="stmon" type="real" value="stmon"/>
+						<property name="styear" type="real" value="styear"/>
+						<property name="endday" type="real" value="endday"/>
+						<property name="endmon" type="real" value="endmon"/>
+						<property name="endyear" type="real" value="endyear"/>
+						<property name="outcome" type="real" value="outcome"/>
+						<property name="fatality" type="real" value="fatality"/>
+						<property name="fatalpre" type="real" value="fatalpre"/>
+						<property name="maxdur" type="real" value="maxdur"/>
+						<property name="mindur" type="real" value="mindur"/>
+						<property name="hiact" type="real" value="hiact"/>
+						<property name="hostlev" type="real" value="hostlev"/>
+						<property name="recip" type="real" value="recip"/>
+						<property name="numa" type="real" value="numa"/>
+						<property name="numb" type="real" value="numb"/>
+						<property name="ongo2010" type="real" value="ongo2010"/>
+					</properties>
+				</node>
+			</nodeclass>
+		</nodes>
+		<networks>
+			<network sourceType="esquema" targetType="esquema" id="esquema x esquema" isDirected="false">
+				<link source="disp" target="disp"/>
+				<link source="country" target="disp"/>
+			</network>
+		</networks>
+	</MetaNetwork>
+</DynamicNetwork>

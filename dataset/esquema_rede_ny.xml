@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<DynamicNetwork>
+	<MetaNetwork>
+		<nodes>
+			<nodeclass type="esquema" id="esquema">
+				<node id="occurrence">
+					<properties>
+						<property name="objectid" type="string" value="objectid"/>
+						<property name="identifier" type="string" value="identifier"/>
+						<property name="occurrence_date" type="real" value="occurrence_date"/>
+						<property name="day_of_week" type="real" value="day_of_week"/>
+						<property name="occurrence_month" type="real" value="occurrence_month"/>
+						<property name="occurrence_day" type="real" value="occurrence_day"/>
+						<property name="occurrence_year" type="string" value="occurrence_year"/>
+						<property name="occurrence_hour" type="string" value="occurrence_hour"/>
+						<property name="compstat_month" type="real" value="compstat_month"/>
+						<property name="compstat_day" type="real" value="compstat_day"/>
+						<property name="compstat_year" type="real" value="compstat_year"/>
+						<property name="offense" type="real" value="offense"/>
+						<property name="offense_classification" type="string" value="offense_classification"/>
+						<property name="sector" type="string" value="sector"/>
+						<property name="precinct" type="real" value="precinct"/>
+						<property name="borough" type="real" value="borough"/>
+						<property name="jurisdiction" type="real" value="jurisdiction"/>
+						<property name="xcoordinate" type="real" value="xcoordinate"/>
+						<property name="ycoordinate" type="string" value="ycoordinate"/>
+						<property name="location_1" type="string" value="location_1"/>
+					</properties>
+				</node>
+				<node id="borough">
+					<properties>
+						<property name="id" type="string" value="id"/>
+						<property name="name" type="real" value="borough"/>
+					</properties>
+				</node>
+				<node id="jurisdiction">
+					<properties>
+						<property name="id" type="string" value="id"/>
+						<property name="name" type="real" value="jurisdiction"/>
+					</properties>
+				</node>
+				<node id="offense">
+					<properties>
+						<property name="id" type="string" value="id"/>
+						<property name="name" type="real" value="offense"/>
+					</properties>
+				</node>
+				<node id="offense_classification">
+					<properties>
+						<property name="id" type="string" value="id"/>
+						<property name="name" type="real" value="offense_classification"/>
+					</properties>
+				</node>
+				<node id="precinct">
+					<properties>
+						<property name="id" type="string" value="id"/>
+						<property name="name" type="real" value="precinct"/>
+					</properties>
+				</node>
+			</nodeclass>
+		</nodes>
+		<networks>
+			<network sourceType="esquema" targetType="esquema" id="esquema x esquema" isDirected="false">
+				<link source="occurrence" target="borough"/>
+				<link source="occurrence" target="jurisdiction"/>
+				<link source="occurrence" target="offense"/>
+				<link source="occurrence" target="offense_classification"/>
+				<link source="occurrence" target="precinct"/>
+			</network>
+		</networks>
+	</MetaNetwork>
+</DynamicNetwork>

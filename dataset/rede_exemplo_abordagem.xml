@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<DynamicNetwork xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation = "DyNetML.xsd">
+	<MetaNetwork>
+		<nodes>
+			<nodeclass type="pessoa" id="pessoa">
+				<node id="1">
+					<properties>
+						<property name="name" type="string" value="suzana"/>
+						<property name="sexo" type="string" value="f"/>
+						<property name="idade" type="integer" value="19"/>
+					</properties>
+				</node>
+				<node id="2">
+					<properties>
+						<property name="name" type="string" value="ana"/>
+						<property name="sexo" type="string" value="f"/>
+						<property name="idade" type="integer" value="18"/>
+					</properties>
+				</node>
+				<node id="3">
+					<properties>
+						<property name="name" type="string" value="carmem"/>
+						<property name="sexo" type="string" value="f"/>
+						<property name="idade" type="integer" value="29"/>
+					</properties>
+				</node>
+				<node id="4">
+					<properties>
+						<property name="name" type="string" value="yoko"/>
+						<property name="sexo" type="string" value="f"/>
+						<property name="idade" type="integer" value="31"/>
+					</properties>
+				</node>
+				<node id="5">
+					<properties>
+						<property name="name" type="string" value="marcio"/>
+						<property name="sexo" type="string" value="m"/>
+						<property name="idade" type="integer" value="23"/>
+					</properties>
+				</node>
+				<node id="6">
+					<properties>
+						<property name="name" type="string" value="ronaldo"/>
+						<property name="sexo" type="string" value="m"/>
+						<property name="idade" type="integer" value="18"/>
+					</properties>
+				</node>
+				<node id="7">
+					<properties>
+						<property name="name" type="string" value="eduardo"/>
+						<property name="sexo" type="string" value="m"/>
+						<property name="idade" type="integer" value="30"/>
+					</properties>
+				</node>
+				<node id="8">
+					<properties>
+						<property name="name" type="string" value="jorge"/>
+						<property name="sexo" type="string" value="m"/>
+						<property name="idade" type="integer" value="25"/>
+					</properties>
+				</node>
+			</nodeclass>
+			<nodeclass type="ocorrencia" id="ocorrencia">
+				<node id="0">
+					<properties>
+						<property name="descricao" type="string" value="oc0"/>
+						<property name="latitude" type="real" value="12"/>
+						<property name="longitude" type="real" value="15"/>
+						<property name="dataHora" type="real" value="7"/>
+					</properties>
+				</node>
+				<node id="1">
+					<properties>
+						<property name="descricao" type="string" value="oc1"/>
+						<property name="latitude" type="real" value="12"/>
+						<property name="longitude" type="real" value="12"/>
+						<property name="dataHora" type="real" value="8"/>
+					</properties>
+				</node>
+				<node id="2">
+					<properties>
+						<property name="descricao" type="string" value="oc2"/>
+						<property name="latitude" type="real" value="10"/>
+						<property name="longitude" type="real" value="10"/>
+						<property name="dataHora" type="real" value="5"/>
+					</properties>
+				</node>
+				<node id="3">
+					<properties>
+						<property name="descricao" type="string" value="oc3"/>
+						<property name="latitude" type="real" value="90"/>
+						<property name="longitude" type="real" value="90"/>
+						<property name="dataHora" type="real" value="18"/>
+					</properties>
+				</node>
+				<node id="4">
+					<properties>
+						<property name="descricao" type="string" value="oc4"/>
+						<property name="latitude" type="real" value="15"/>
+						<property name="longitude" type="real" value="15"/>
+						<property name="dataHora" type="real" value="7"/>
+					</properties>
+				</node>
+				<node id="5">
+					<properties>
+						<property name="descricao" type="string" value="oc5"/>
+						<property name="latitude" type="real" value="80"/>
+						<property name="longitude" type="real" value="80"/>
+						<property name="dataHora" type="real" value="17"/>
+					</properties>
+				</node>
+				<node id="6">
+					<properties>
+						<property name="descricao" type="string" value="oc6"/>
+						<property name="latitude" type="real" value="85"/>
+						<property name="longitude" type="real" value="85"/>
+						<property name="dataHora" type="real" value="19"/>
+					</properties>
+				</node>
+			</nodeclass>
+			<nodeclass type="item" id="item">
+				<node id="1">
+					<properties>
+						<property name="descricao" type="string" value="1"/>
+					</properties>
+				</node>
+				<node id="2">
+					<properties>
+						<property name="descricao" type="string" value="2"/>
+					</properties>
+				</node>
+				<node id="3">
+					<properties>
+						<property name="descricao" type="string" value="3"/>
+					</properties>
+				</node>
+			</nodeclass>
+			<nodeclass type="tipoOcorrencia" id="tipoOcorrencia">
+				<node id="1">
+					<properties>
+						<property name="descricao" type="string" value="1"/>
+					</properties>
+				</node>
+			</nodeclass>
+			<nodeclass type="delegacia" id="delegacia">
+				<node id="1">
+					<properties>
+						<property name="descricao" type="string" value="dg1"/>
+					</properties>
+				</node>
+			</nodeclass>
+		</nodes>
+		<networks>
+			<network sourceType="pessoa" targetType="ocorrencia" id="pessoa x ocorrencia" isDirected="false">
+				<link source="1" target="0"/>
+				<link source="1" target="1"/>
+				<link source="2" target="1"/>
+				<link source="3" target="6"/>
+				<link source="4" target="6"/>
+				<link source="5" target="2"/>
+				<link source="5" target="3"/>
+				<link source="5" target="4"/>
+				<link source="6" target="0"/>
+				<link source="6" target="2"/>
+				<link source="6" target="4"/>
+				<link source="7" target="3"/>
+				<link source="7" target="5"/>
+				<link source="8" target="4"/>
+				<link source="8" target="5"/>
+			</network>
+			<network sourceType="tipoOcorrencia" targetType="ocorrencia" id="tipoOcorrencia x ocorrencia" isDirected="false">
+				<link source="1" target="0"/>
+				<link source="1" target="1"/>
+				<link source="1" target="2"/>
+				<link source="1" target="3"/>
+				<link source="1" target="4"/>
+				<link source="1" target="5"/>
+				<link source="1" target="6"/>
+			</network>
+			<network sourceType="delegacia" targetType="ocorrencia" id="delegacia x ocorrencia" isDirected="false">
+				<link source="1" target="0"/>
+				<link source="1" target="1"/>
+				<link source="1" target="2"/>
+				<link source="1" target="3"/>
+				<link source="1" target="4"/>
+				<link source="1" target="5"/>
+				<link source="1" target="6"/>
+			</network>
+			<network sourceType="item" targetType="ocorrencia" id="item x ocorrencia" isDirected="false">
+				<link source="1" target="0"/>
+				<link source="1" target="1"/>
+				<link source="1" target="2"/>
+				<link source="1" target="6"/>
+				<link source="2" target="5"/>
+				<link source="3" target="3"/>
+				<link source="3" target="4"/>
+			</network>
+		</networks>
+	</MetaNetwork>
+</DynamicNetwork>
