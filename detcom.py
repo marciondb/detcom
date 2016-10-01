@@ -53,7 +53,7 @@ class Main():
         # STEP FOUR INIT
         fileWithTreatedRecords = 'output/recordsForClustering.txt'
         fileWithOriginalRecords = 'output/records.txt'
-        step4.Etp4().run(fileWithTreatedRecords, fileWithOriginalRecords, categorical, isHomogeneousNetwork)
+        #step4.Etp4().run(fileWithTreatedRecords, fileWithOriginalRecords, categorical, isHomogeneousNetwork)
 
         # STEP FOUR END
         # ***********************************************************
@@ -69,15 +69,14 @@ class Main():
 
         # ***********************************************************
         # STEP SIX INIT
-        fileWithCommunitiesDetects = 'output/communitiesDetects.txt'
-        #step6.Etp6().run(fileInducedGraph, fileWithCommunitiesDetects, targetVertice, nameOfNetwork, attrbToLabel, xmlFileNetworkGi)
+        #step6.Etp6().run(fileInducedGraph, targetVertice, nameOfNetwork, attrbToLabel, xmlFileNetworkGi)
 
         # STEP SIX END
         # ***********************************************************
 
         # ***********************************************************
         # STEP SEVEN INIT
-        #step7.Etp7().run(targetVertice, nameOfNetwork, attrbToLabel, xmlFileNetworkGi)
+        step7.Etp7().run(targetVertice, nameOfNetwork, attrbToLabel, xmlFileNetworkGi)
 
         # STEP SEVEN END
         # ***********************************************************

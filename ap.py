@@ -123,7 +123,7 @@ def ap(file_name, categorical, isHomogeneousNetwork):
     # Compute Affinity Propagation
     #af = AffinityPropagation(preference=-15, damping=0.9, convergence_iter=200, max_iter=2000).fit(X)
     if categorical:
-        af = AffinityPropagation(affinity='precomputed',preference=10, damping=0.9, convergence_iter=200, max_iter=2000).fit(X)
+        af = AffinityPropagation(affinity='precomputed',preference=-3, damping=0.9, convergence_iter=200, max_iter=2000).fit(X)
     else:
         af = AffinityPropagation(preference=-15, damping=0.9, convergence_iter=200, max_iter=2000).fit(X)
 

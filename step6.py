@@ -1,6 +1,5 @@
 __author__ = 'marcio'
 
-from sklearn.metrics.cluster import normalized_mutual_info_score
 from lxml import  objectify
 import snap
 import re
@@ -38,16 +37,16 @@ class Etp6():
 
                         verticeName = node.get("id")
 
+                        if attrbToLabel == "mainId":
+                            dictLabel[int(verticeName)] = verticeName
+                            continue
+
                         for nodeProperties in node.getchildren():
                             for property in nodeProperties.getchildren():
 
                                 # To include only attributes that the were selected in the var self.attribSelecteds
                                 name = property.get('name')
                                 value = property.get('value')
-
-                                if attrbToLabel == "mainId":
-                                    dictLabel[int(verticeName)] = verticeName
-                                    continue
 
                                 if name == attrbToLabel:
                                     dictLabel[int(verticeName)] = value
@@ -65,7 +64,7 @@ class Etp6():
         return aux2[1]+','+aux3[1]
 
 
-    def sendGraphToDetect( self, algorithmChoose, fileInducedGraph, fileWithCommunitiesDetects, targetVertice, nameOfNetwork, attrbToLabel, GI ):
+    def sendGraphToDetect( self, algorithmChoose, fileInducedGraph, targetVertice, nameOfNetwork, attrbToLabel, GI ):
 
         numberOfGraph = -1
         flagChangeGraphControl = -1
@@ -89,7 +88,7 @@ class Etp6():
 
                         if listGraph.__len__() > 0:
                             #print ''
-                            results.append(algorithmChoose.Main().run(listGraph, fileWithCommunitiesDetects, nameOfNetwork, numberOfGraph, dictLabel))
+                            results.append(algorithmChoose.Main().run(listGraph, nameOfNetwork, numberOfGraph, dictLabel))
 
                         listGraph = []
 
@@ -97,7 +96,7 @@ class Etp6():
                     listGraph.append(lineToIncludeInList)
 
             numberOfGraph += 1
-            results.append( algorithmChoose.Main().run(listGraph, fileWithCommunitiesDetects, nameOfNetwork, numberOfGraph, dictLabel))
+            results.append( algorithmChoose.Main().run(listGraph, nameOfNetwork, numberOfGraph, dictLabel))
 
         listGraph = []
 
@@ -107,7 +106,7 @@ class Etp6():
             for line in content:
                 listGraph.append(line)
 
-        result2 = algorithmChoose.Main().run(listGraph, fileWithCommunitiesDetects, nameOfNetwork, 10000, dictLabel)
+        result2 = algorithmChoose.Main().run(listGraph, nameOfNetwork, 10000, dictLabel)
 
         fileOfResults = "output\\Results_{}.txt".format(nameOfNetwork)
         self.saveResults(results, result2, fileOfResults)
@@ -151,7 +150,7 @@ class Etp6():
 
         file_.close()
 
-    def run(self, fileInducedGraph, fileWithCommunitiesDetects, targetVertice, nameOfNetwork, attrbToLabel, GI ):
+    def run(self, fileInducedGraph, targetVertice, nameOfNetwork, attrbToLabel, GI ):
 
 
         #list of algorithm to choose
@@ -170,7 +169,7 @@ class Etp6():
 
             algorithmChoose = gncd
 
-        self.sendGraphToDetect( algorithmChoose, fileInducedGraph, fileWithCommunitiesDetects, targetVertice, nameOfNetwork, attrbToLabel, GI )
+        self.sendGraphToDetect( algorithmChoose, fileInducedGraph, targetVertice, nameOfNetwork, attrbToLabel, GI )
 
         print "Step6 done!"
 

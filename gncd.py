@@ -67,7 +67,7 @@ class Main():
 
         return vetTemp
 
-    #because the !@@#$@ copy.copy or deepcopy DOESN'T WORK!!!!
+    #because the copy.copy or deepcopy DOESN'T WORK!!!!
     # for snap.graphs
     def graphCopy(self, graphToCopy):
 
@@ -123,7 +123,7 @@ class Main():
 
         return avgDen
 
-    def run(self, listGraph, fileWithCommunitiesDetects, nameOfNetwork, numberOfGraph, dictLabel):
+    def run(self, listGraph, nameOfNetwork, numberOfGraph, dictLabel):
 
         self.Graph = snap.PUNGraph.New()
         self.GraphDet = snap.PUNGraph.New()

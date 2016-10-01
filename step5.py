@@ -102,7 +102,6 @@ class Etp5():
     def treatClustersFile(self, fileWithClusters, fileRecords, isHomogeneousNetwork):
 
         numberOfClusters = -1
-        flagChangeClusterControl = -1
         cluterDict = {}
         listCluster = []
 
@@ -113,23 +112,17 @@ class Etp5():
                 clusterInit = line.find("cluster")
 
                 if clusterInit >= 0 :
+                    if numberOfClusters > -1:
+                        cluterDict[numberOfClusters] = listCluster
+                        listCluster = []
+
                     numberOfClusters = numberOfClusters + 1
                     continue
                 else:
 
-                    if flagChangeClusterControl < numberOfClusters:
-                        flagChangeClusterControl = numberOfClusters
-
-                        if listCluster.__len__() > 0 :
-                            cluterDict[numberOfClusters-1] = listCluster
-
-                        listCluster = []
-
                     lineToIncludeInList = self.compareSpecificLineInRecords(line, fileRecords, isHomogeneousNetwork)
 
                     listCluster.append(lineToIncludeInList)
-
-            cluterDict[numberOfClusters] = listCluster
 
         return cluterDict
 

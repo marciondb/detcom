@@ -205,13 +205,13 @@ class Etp7():
 
     def saveResultsToExcel(self, results, result2, result3, nameOfNetwork):
 
-        col2_name = 'Nmi Xin Liu'
+        col2_name = 'Nmi LouvainC'
         col6_name = 'Nmi GN'
         col3_name = 'M DetCom'
-        col4_name = 'M Xin Liu'
+        col4_name = 'M LouvainC'
         col5_name = 'M GN'
         col7_name = 'D DetCom'
-        col8_name = 'D Xin Liu'
+        col8_name = 'D LouvainC'
         col9_name = 'D GN'
 
         modularitiesDetCom = []
