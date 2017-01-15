@@ -11,22 +11,6 @@ from pandas import DataFrame
 
 class Etp7():
 
-    def makeVectorToNni(self, arryMni, listGraph):
-        dictMni = {}
-
-        for commuLabel in arryMni:
-            vetNodesInCommu = arryMni[commuLabel]
-
-            for node in vetNodesInCommu:
-                index = listGraph.index(node)
-                dictMni[ index ] = commuLabel
-
-        vetTemp = []
-        for item in dictMni:
-            vetTemp.append(dictMni[item])
-
-        return vetTemp
-
     def makeNewNmi(self, nodesFromCompareAlg, nodesFromInductedGraph, vetNmiFromCompareAlg):
         newArrNmi = []
 
@@ -182,7 +166,7 @@ class Etp7():
         fileWithOriginalIds = "dataset\\original_ids_{}.txt".format(nameOfNetwork)
 
         arrayToNmi = self.getLouvainCResultFromFileToOriginalIds(fileLouvainC, fileWithOriginalIds)
-        vetorNmi = self.makeVectorToNni(arrayToNmi, nodesArray)
+        vetorNmi = gncd.Main().makeVectorToNmi(arrayToNmi, nodesArray)
 
         nameOfFileToCompare = "dataset\grafo_metapath_{}.txt".format(nameOfNetwork)
         listGraph = []

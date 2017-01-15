@@ -18,14 +18,14 @@ class Main():
         # ***********************************************************
         # STEP ONE INIT
 
-        xmlFileSchema = 'dataset/esquema_rede_conflito.xml'
+        xmlFileSchema = 'dataset/esquema_rede_enronNetwork.xml'
         # verticesAndAttribFromSchema = step1.Etp1().getAllVerticesAndAttribFromSchema( xmlFileSchema)
         # print verticesAndAttribFromSchema
 
         self.metaPath.append('disp')
         self.metaPath.append('country')
 
-        self.attribSelecteds['country'] = []  # ['gdp_growth', 'lat', 'long']
+        self.attribSelecteds['country'] = []
         self.attribSelecteds['disp'] = ['fatality', 'hostlev']
 
         xmlFileNetworkGi = 'dataset/rede_conflitos.xml'
@@ -52,8 +52,7 @@ class Main():
         # ***********************************************************
         # STEP FOUR INIT
         fileWithTreatedRecords = 'output/recordsForClustering.txt'
-        fileWithOriginalRecords = 'output/records.txt'
-        #step4.Etp4().run(fileWithTreatedRecords, fileWithOriginalRecords, categorical, isHomogeneousNetwork)
+        #step4.Etp4().run(fileWithTreatedRecords, fileToSaveRecords, categorical, isHomogeneousNetwork)
 
         # STEP FOUR END
         # ***********************************************************

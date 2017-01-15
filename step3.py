@@ -239,7 +239,7 @@ class Etp3():
     def buildRecordsForHomogeneousNetwork(self, fileToSaveRecords):
 
         #TODO mover para uma forma genérica
-        attrbLink = ['bagOfWords','year']
+        attrbLink = ['bagOfWords']
         root = self.rootNetworkXmlFile
 
         for metaNetwork in root.getchildren():

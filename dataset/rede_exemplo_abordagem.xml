@@ -1,60 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<DynamicNetwork xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation = "DyNetML.xsd">
+<DynamicNetwork xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation = "DyNetML.xsd">
 	<MetaNetwork>
 		<nodes>
 			<nodeclass type="pessoa" id="pessoa">
 				<node id="1">
 					<properties>
-						<property name="name" type="string" value="suzana"/>
+						<property name="name" type="string" value="Suzana"/>
 						<property name="sexo" type="string" value="f"/>
 						<property name="idade" type="integer" value="19"/>
 					</properties>
 				</node>
 				<node id="2">
 					<properties>
-						<property name="name" type="string" value="ana"/>
+						<property name="name" type="string" value="Ana"/>
 						<property name="sexo" type="string" value="f"/>
 						<property name="idade" type="integer" value="18"/>
 					</properties>
 				</node>
 				<node id="3">
 					<properties>
-						<property name="name" type="string" value="carmem"/>
+						<property name="name" type="string" value="Carmem"/>
 						<property name="sexo" type="string" value="f"/>
 						<property name="idade" type="integer" value="29"/>
 					</properties>
 				</node>
 				<node id="4">
 					<properties>
-						<property name="name" type="string" value="yoko"/>
+						<property name="name" type="string" value="Amanda"/>
 						<property name="sexo" type="string" value="f"/>
 						<property name="idade" type="integer" value="31"/>
 					</properties>
 				</node>
 				<node id="5">
 					<properties>
-						<property name="name" type="string" value="marcio"/>
+						<property name="name" type="string" value="Marcio"/>
 						<property name="sexo" type="string" value="m"/>
 						<property name="idade" type="integer" value="23"/>
 					</properties>
 				</node>
 				<node id="6">
 					<properties>
-						<property name="name" type="string" value="ronaldo"/>
+						<property name="name" type="string" value="Ramyro"/>
 						<property name="sexo" type="string" value="m"/>
 						<property name="idade" type="integer" value="18"/>
 					</properties>
 				</node>
 				<node id="7">
 					<properties>
-						<property name="name" type="string" value="eduardo"/>
+						<property name="name" type="string" value="Dilmar"/>
 						<property name="sexo" type="string" value="m"/>
 						<property name="idade" type="integer" value="30"/>
 					</properties>
 				</node>
 				<node id="8">
 					<properties>
-						<property name="name" type="string" value="jorge"/>
+						<property name="name" type="string" value="Jorge"/>
 						<property name="sexo" type="string" value="m"/>
 						<property name="idade" type="integer" value="25"/>
 					</properties>

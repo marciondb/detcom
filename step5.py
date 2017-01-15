@@ -19,15 +19,19 @@ class Etp5():
 
         return newList
 
+
     def returnLineFromRecordsFile(self, lineToCompare, fileRecords):
+        from string import whitespace
+        import hashlib
+
         countLine = 0
         with open(fileRecords) as f:
             content = f.read().splitlines()
             for line in content:
                 partition = line.split('|')
 
-                lineFromRecords = partition[1].replace(" ", "")
-                lstrip = lineToCompare.replace(" ", "")
+                lineFromRecords = hashlib.md5(partition[1].translate(None, whitespace)).hexdigest()
+                lstrip = hashlib.md5(lineToCompare.translate(None, whitespace)).hexdigest()
                 if lstrip == lineFromRecords:
 
                     partitionEdge = partition[0].split('-')
@@ -38,22 +42,23 @@ class Etp5():
                     self.lineToCompareSaver[countLine] = partitionEdge
 
                     return partitionEdge
+                    #return partition
                 countLine += 1
 
 
     lineToCompareSaver = {}
 
-    #compare the item and return an specific line in the original records file
+    # compare the item and return an specific line in the original records file
     def compareSpecificLineInRecords(self, lineToCompare, fileRecords, isHomogeneousNetwork):
 
         if isHomogeneousNetwork:
             return self.returnLineFromRecordsFile(lineToCompare, fileRecords)
 
+        contLine = 0
         with open(fileRecords) as f:
             content = f.read().splitlines()
             for line in content:
                 partition = line.split('|')
-
 
                 """
                 TO treat the line, need to transform the number in the same "decimal size"
@@ -67,33 +72,21 @@ class Etp5():
                     if x != '':
                         arrayThisLine.append("%.5e" % float(x))
 
-
-                #sometimes (always!) the line to compare is iqual, more than once, to another lines after the "|"
-                #so, as is sequencial, line by line, the 1st time was line 1, if is the same lineToCompare, can't be
-                # line 1, and will be the next line found iqual (because is line by line)
-                # yeah, isn't a good explanation, but BRILLLLLLL...
-                #INIT BRIL
-                partMP = partition[0].split('-')
-
-                keyFromLine = ''
-                for item in partMP:
-                    subItem = item.split(',')
-
-                    keyFromLine = '{}{}'.format(keyFromLine, subItem[1])
-                # END BRIL
-
                 if arrayFromClusterFile == arrayThisLine:
 
-                    #BRIL
-                    if keyFromLine in self.lineToCompareSaver:
+                    # BRIL
+                    if contLine in self.lineToCompareSaver:
+                        contLine += 1
                         continue
 
                     partitionEdge = partition[0].split('-')
 
                     # BRIL
-                    self.lineToCompareSaver[keyFromLine] = partitionEdge
+                    self.lineToCompareSaver[contLine] = partitionEdge
 
                     return partitionEdge
+                else:
+                    contLine+=1
         return None
 
 
@@ -121,8 +114,11 @@ class Etp5():
                 else:
 
                     lineToIncludeInList = self.compareSpecificLineInRecords(line, fileRecords, isHomogeneousNetwork)
-
+                    #if lineToIncludeInList is None:
+                        #continue
                     listCluster.append(lineToIncludeInList)
+
+        cluterDict[numberOfClusters] = listCluster
 
         return cluterDict
 
@@ -216,7 +212,7 @@ class Etp5():
 
             self.file_.write('graph {}'.format(count) + '\n')
             count = count + 1
-            edges = ''
+
             for item in listOfItens:
                 node1 = item[0].replace(",","")
                 node2 = item[1].replace(",","")

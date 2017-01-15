@@ -171,7 +171,7 @@ class Main():
                       "{}/graph{}CommDetects{}.png".format(directory, numberOfGraph, nameOfNetwork),
                       "Grafo{} {} com as comunidades detectadas por DetCon".format(numberOfGraph,
                                                                                          nameOfNetwork), H)
-        # print "A modularidade da Rede foi? %f" % modularity
+        print "A modularidade da Rede foi? %f" % modularity
 
         density = self.avgDensity(self.GraphDet, arryToNmi)
 

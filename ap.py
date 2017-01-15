@@ -3,7 +3,7 @@ print(__doc__)
 from sklearn.cluster import AffinityPropagation
 import numpy as np
 import math
-import collections
+from sklearn.metrics import euclidean_distances
 
 def getNumberFromDiference(S1, S2):
     difference = list(S1.symmetric_difference(S2))
@@ -11,22 +11,7 @@ def getNumberFromDiference(S1, S2):
 
     return result
 
-def bagOfWordsDistance(line1, line2):
-    value = 0.0
-    for index in range(0, len(line1) - 1):
-        if isinstance( line1[index], int):
-            value += (line1[index] - line2[index]) ** 2
-        else:
-            value += getNumberFromDiference(line1[index], line2[index])
-
-    result = math.sqrt(value)
-
-    return result
-
-def categoricalDist(line1, line2, isHomogeneousNetwork):
-
-    if isHomogeneousNetwork:
-        return bagOfWordsDistance(line1, line2)
+def categoricalDist(line1, line2):
 
     value = 0.0
     for index in range(0, len(line1)-1):
@@ -55,8 +40,60 @@ def getLineFromList(list, indexLine):
 
     return "erro"
 
+def distanceForText(textVet):
+
+    from sklearn.feature_extraction import text
+    from sklearn.feature_extraction.text import TfidfVectorizer
+
+    stopwords = text.ENGLISH_STOP_WORDS.union(
+        ['10', '11', '2001', 'amto', 'cc', 'know', 'just', 'like', 'friday', 'monday', 'fw', 'week', 'make', 'day',
+         'don', 'today', 'use', 'questions', 'october', 'november', 'work', '08', '15', '26', 'time', '2002', 'gas',
+         'contract', 'meeting', 'said', 'ees', 'EES', 'NA',
+         'tuesday', 'wednesday', 'ect', 'com', 'new', 'let', 'need', 'hou', 'pm', 'pmto', 'mark', 'sent', 'subject',
+         'thanks', 'message', 'want', 'thursday', 'think', '0003', '66', '199', '42', '688', '57', 'ga', 'corp',
+         'agreement',
+         'original', '00', '01', '02', '03', '04', '05', '09', '12', '20', '2000', '30', '646', '713', '853',
+         'attached', 'going', 'll', 'mail', 'forward', 'forwarded', 'will', 'enron', 'energy', 'california', 'power',
+         'EE', 'ET', 'ee', 'et'])
+
+    tfidf_vectorizer = TfidfVectorizer(max_df=0.9, max_features=200000,
+                                       min_df=0.1, analyzer='word', stop_words=stopwords,
+                                       use_idf=True)
+
+    corpus = []
+    for texts in textVet:
+        corpus.append(texts[0])
+
+    tfidf_matrix = tfidf_vectorizer.fit_transform(corpus)
+
+    return tfidf_matrix
+
+    #isso eh para arXvi
+    """years = []
+    corpus = []
+    for texts in textVet:
+        corpus.append(texts[0])
+        years.append(texts[1])
+
+    tfidf_vectorizer = TfidfVectorizer(max_df=0.9, max_features=200000,
+                                   min_df=0.1, analyzer='word', stop_words=stopwords,
+                                   use_idf=True)
+    tfidf_matrix = tfidf_vectorizer.fit_transform(corpus)
+
+    preX = tfidf_matrix.todense()
+
+    import gc
+    del tfidf_matrix, tfidf_vectorizer
+    gc.collect()
+
+    x = np.hstack((preX, np.atleast_2d(years).T))
+
+    return x"""
 
 def makeCategoricalX(X_temp, isHomogeneousNetwork):
+
+    if isHomogeneousNetwork:
+        return distanceForText(X_temp)
 
     squareMatriz = np.zeros(shape=(len(X_temp),len(X_temp)))
     contLine = 0
@@ -72,7 +109,7 @@ def makeCategoricalX(X_temp, isHomogeneousNetwork):
                 squareMatriz[contLine, contCol] = 0.0
             else:
                 X_line2 = getLineFromList(X_temp, contCol)
-                squareMatriz[contLine, contCol] = categoricalDist(X_line1, X_line2, isHomogeneousNetwork)
+                squareMatriz[contLine, contCol] = categoricalDist(X_line1, X_line2)
 
             contCol+=1
         contCol = 0
@@ -108,24 +145,24 @@ def ap(file_name, categorical, isHomogeneousNetwork):
     ##############################################################################
     # Generate data
     if categorical:
-        loadFromFile = True
-        X_temp = buildAsCategorical(file_name)
+        loadFromFile = False
+        X_temp = buildAsCategorical(file_name, isHomogeneousNetwork)
 
         if loadFromFile:
             X = np.loadtxt('output/x.txt')
         else:
             X = makeCategoricalX(X_temp, isHomogeneousNetwork)
-            np.savetxt('output/x.txt',X, fmt='%1.3e')
+            #np.savetxt('output/x.txt',X, fmt='%1.5e')
     else:
         X = _buildV(file_name)
 
     ##############################################################################
     # Compute Affinity Propagation
     #af = AffinityPropagation(preference=-15, damping=0.9, convergence_iter=200, max_iter=2000).fit(X)
-    if categorical:
-        af = AffinityPropagation(affinity='precomputed',preference=-3, damping=0.9, convergence_iter=200, max_iter=2000).fit(X)
+    if categorical and not isHomogeneousNetwork:
+        af = AffinityPropagation(affinity='precomputed',preference=-1, damping=0.965, convergence_iter=200, max_iter=2000).fit(X)
     else:
-        af = AffinityPropagation(preference=-15, damping=0.9, convergence_iter=200, max_iter=2000).fit(X)
+        af = AffinityPropagation(preference=-16, damping=0.9, convergence_iter=200, max_iter=2000).fit(X)
 
     cluster_centers_indices = af.cluster_centers_indices_
     #affinity_matrix = af.affinity_matrix_
@@ -206,14 +243,14 @@ def treatStringVetToNumber(vet):
         elif RepresentsFloat(item):
             newVet.append(float(item))
         else:
-            newVet.append(eval(item))
+            newVet.append(item)
 
     return newVet
 
 #as is possible to have categorical values and noncategorical values, need to create this matrix
 # for the categoricalDist function
 #_buildV transform all values to float, but I want int (categorical) and float (noncategorical)
-def buildAsCategorical(file_):
+def buildAsCategorical(file_, isHomogeneousNetwork):
 
     vetResult = []
     with open(file_) as f:
@@ -222,7 +259,9 @@ def buildAsCategorical(file_):
             partitionList = line.split('   ')
             partitionList.pop(0)
 
-            partitionList = treatStringVetToNumber(partitionList)
+            if not isHomogeneousNetwork:
+                partitionList = treatStringVetToNumber(partitionList)
+
             vetResult.append(partitionList)
 
     return vetResult

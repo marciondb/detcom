@@ -13,9 +13,6 @@
 						<property name="occurrence_day" type="real" value="occurrence_day"/>
 						<property name="occurrence_year" type="string" value="occurrence_year"/>
 						<property name="occurrence_hour" type="string" value="occurrence_hour"/>
-						<property name="compstat_month" type="real" value="compstat_month"/>
-						<property name="compstat_day" type="real" value="compstat_day"/>
-						<property name="compstat_year" type="real" value="compstat_year"/>
 						<property name="offense" type="real" value="offense"/>
 						<property name="offense_classification" type="string" value="offense_classification"/>
 						<property name="sector" type="string" value="sector"/>
@@ -31,6 +28,7 @@
 					<properties>
 						<property name="id" type="string" value="id"/>
 						<property name="name" type="real" value="borough"/>
+						<property name="neighborhoods" type="string" value="neighborhoods"/>
 					</properties>
 				</node>
 				<node id="jurisdiction">

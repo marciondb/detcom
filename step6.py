@@ -127,26 +127,34 @@ class Etp6():
         for result in results:
             file_.write('graph {}\n'.format(numberOfGraph))
             numberOfGraph += 1
-
+            cont = -1
             for term in result:
+                cont+=1
                 # 0 = modularity
                 # 1 = nodeArray
                 # 2 = vetorNmi
                 # 3 = density
                 # 4 = detected communities/arrayToNmi
-                strLine = self.getStrFromArray(result[term])
-                file_.write("{0}\n".format(strLine))
+                if cont < 4:
+                    strLine = self.getStrFromArray(result[term])
+                    file_.write("{0}\n".format(strLine))
+                else:
+                    file_.write("{0}\n".format(result[term]))
 
         #result From GN
         file_.write('GN\n')
+        cont = -1
         for term in result2:
             # 0 = modularity
             # 1 = nodeArray
             # 2 = vetorNmi
             # 3 = density
             # 4 = detected communities/arrayToNmi
-            strLine = self.getStrFromArray(result2[term])
-            file_.write("{0}\n".format(strLine))
+            if cont < 4:
+                strLine = self.getStrFromArray(result2[term])
+                file_.write("{0}\n".format(strLine))
+            else:
+                file_.write("{0}\n".format(result2[term]))
 
         file_.close()
 
