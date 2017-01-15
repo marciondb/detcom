@@ -187,6 +187,14 @@ class Etp7():
 
         return result
 
+    def fixArrayToSaveInExcel(self, arrayToFixIt):
+
+        result = []
+        for item in arrayToFixIt:
+            result.append(item[0])
+
+        return result
+
     def saveResultsToExcel(self, results, result2, result3, nameOfNetwork):
 
         col2_name = 'Nmi LouvainC'
@@ -236,14 +244,23 @@ class Etp7():
             densitiesGN.append(result2[3])
             densitiesLouvainC.append(result3[3])
 
-        df = DataFrame({col6_name: nmisGN,
-                        col2_name: nmisLouvainC,
-                        col5_name: modularitiesGN,
-                        col4_name: modularitiesLouvainC,
-                        col3_name: modularitiesDetCom,
-                        col9_name: densitiesGN,
-                        col8_name: densitiesLouvainC,
-                        col7_name: densitiesDetCom})
+        """
+        In some python compilers, when generate the Excel file, value like [[0.208333333333], [0.0555555555556]] got
+        some error. So I make this change to "fix" it.
+        modularitiesGN
+        modularitiesDetCom
+        densitiesGN
+        densitiesDetCom
+        """
+
+        df = DataFrame( {   col6_name: nmisGN,
+                            col2_name: nmisLouvainC,
+                            col5_name: self.fixArrayToSaveInExcel(  modularitiesGN),
+                            col4_name: modularitiesLouvainC,
+                            col3_name: self.fixArrayToSaveInExcel( modularitiesDetCom ),
+                            col9_name: self.fixArrayToSaveInExcel( densitiesGN ),
+                            col8_name: densitiesLouvainC,
+                            col7_name: self.fixArrayToSaveInExcel( densitiesDetCom ) } )
         df.to_excel('result_{}.xlsx'.format(nameOfNetwork), sheet_name='comparacao', index=True)
 
         return 0

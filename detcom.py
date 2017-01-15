@@ -22,18 +22,18 @@ class Main():
         # verticesAndAttribFromSchema = step1.Etp1().getAllVerticesAndAttribFromSchema( xmlFileSchema)
         # print verticesAndAttribFromSchema
 
-        self.metaPath.append('disp')
-        self.metaPath.append('country')
+        self.metaPath.append('pessoa')
+        self.metaPath.append('ocorrencia')
 
-        self.attribSelecteds['country'] = []
-        self.attribSelecteds['disp'] = ['fatality', 'hostlev']
+        self.attribSelecteds['pessoa'] = ['idade']
+        self.attribSelecteds['ocorrencia'] = ['latitude', 'longitude', 'dataHora']
 
-        xmlFileNetworkGi = 'dataset/rede_conflitos.xml'
-        nameOfNetwork = 'conflitosNetwork'
-        targetVertice = 'disp'
-        attrbToLabel = 'styear'
+        xmlFileNetworkGi = 'dataset/rede_exemplo_abordagem.xml'
+        nameOfNetwork = 'abordagemNetwork'
+        targetVertice = 'pessoa'
+        attrbToLabel = 'name'
 
-        categorical = True
+        categorical = False
         isHomogeneousNetwork = False
 
         # print "Step1 done!"
@@ -44,7 +44,7 @@ class Main():
         # ***********************************************************
         # STEP THREE INIT
         fileToSaveRecords = 'output/records.txt'
-        step3.Etp3().run(xmlFileNetworkGi, self.metaPath, self.attribSelecteds, fileToSaveRecords, isHomogeneousNetwork)
+        #step3.Etp3().run(xmlFileNetworkGi, self.metaPath, self.attribSelecteds, fileToSaveRecords, isHomogeneousNetwork)
 
         # STEP THREE END
         # ***********************************************************
@@ -75,7 +75,7 @@ class Main():
 
         # ***********************************************************
         # STEP SEVEN INIT
-        #step7.Etp7().run(targetVertice, nameOfNetwork, attrbToLabel, xmlFileNetworkGi)
+        step7.Etp7().run(targetVertice, nameOfNetwork, attrbToLabel, xmlFileNetworkGi)
 
         # STEP SEVEN END
         # ***********************************************************

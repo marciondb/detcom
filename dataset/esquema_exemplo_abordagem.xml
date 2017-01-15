@@ -5,7 +5,7 @@
 			<nodeclass type="esquema" id="esquema">
 				<node id="pessoa">
 					<properties>
-						<property name="nome" type="string" value="nome"/>
+						<property name="name" type="string" value="name"/>
 						<property name="sexo" type="string" value="sexo"/>
 						<property name="idade" type="string" value="idade"/>
 					</properties>
