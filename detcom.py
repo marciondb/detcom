@@ -44,7 +44,7 @@ class Main():
         # ***********************************************************
         # STEP THREE INIT
         fileToSaveRecords = 'output/records.txt'
-        #step3.Etp3().run(xmlFileNetworkGi, self.metaPath, self.attribSelecteds, fileToSaveRecords, isHomogeneousNetwork)
+        step3.Etp3().run(xmlFileNetworkGi, self.metaPath, self.attribSelecteds, fileToSaveRecords, isHomogeneousNetwork)
 
         # STEP THREE END
         # ***********************************************************
@@ -75,7 +75,7 @@ class Main():
 
         # ***********************************************************
         # STEP SEVEN INIT
-        step7.Etp7().run(targetVertice, nameOfNetwork, attrbToLabel, xmlFileNetworkGi)
+        #step7.Etp7().run(targetVertice, nameOfNetwork, attrbToLabel, xmlFileNetworkGi)
 
         # STEP SEVEN END
         # ***********************************************************

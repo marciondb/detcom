@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b137d69-276d-4529-b58a-956a7aa15b41" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset/predataset/arxiv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset/predataset/grafo_metapath_arxivNetwork.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset/predataset/original_ids_arxivNetwork.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset/predataset/rede_arxivNetwork.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/clusters-marcio-pc.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result_arxivNetwork.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result_conflitosNetwork.xlsx" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/toArxiv.py" afterPath="$PROJECT_DIR$/arxivToDetCom.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ap.py" afterPath="$PROJECT_DIR$/ap.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/esquema_rede_ny.xml" afterPath="$PROJECT_DIR$/dataset/esquema_rede_ny.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/grafo_metapath_abordagemNetwork.txt" afterPath="$PROJECT_DIR$/dataset/grafo_metapath_abordagemNetwork.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/grafo_metapath_arxivNetwork.txt" afterPath="$PROJECT_DIR$/dataset/grafo_metapath_arxivNetwork.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/grafo_metapath_conflitosNetwork.txt" afterPath="$PROJECT_DIR$/dataset/grafo_metapath_conflitosNetwork.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/grafo_metapath_nyNetwork.txt" afterPath="$PROJECT_DIR$/dataset/grafo_metapath_nyNetwork.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/louvainC_arxivNetwork.txt" afterPath="$PROJECT_DIR$/dataset/louvainC_arxivNetwork.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/louvainC_conflitosNetwork.txt" afterPath="$PROJECT_DIR$/dataset/louvainC_conflitosNetwork.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/original_ids_arxivNetwork.txt" afterPath="$PROJECT_DIR$/dataset/original_ids_arxivNetwork.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/original_ids_conflitosNetwork.txt" afterPath="$PROJECT_DIR$/dataset/original_ids_conflitosNetwork.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/predataset/.meta" afterPath="$PROJECT_DIR$/dataset/predataset/.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/predataset/hetero.net" afterPath="$PROJECT_DIR$/dataset/predataset/hetero.net" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/rede_arxivNetwork.xml" afterPath="$PROJECT_DIR$/dataset/rede_arxivNetwork.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/rede_exemplo_abordagem.xml" afterPath="$PROJECT_DIR$/dataset/rede_exemplo_abordagem.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset/rede_ny.xml" afterPath="$PROJECT_DIR$/dataset/rede_ny.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detcom.py" afterPath="$PROJECT_DIR$/detcom.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gncd.py" afterPath="$PROJECT_DIR$/gncd.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/Results_conflitosNetwork.txt" afterPath="$PROJECT_DIR$/output/Results_conflitosNetwork.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/clusters.txt" afterPath="$PROJECT_DIR$/output/clusters.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/inducedGraph.txt" afterPath="$PROJECT_DIR$/output/inducedGraph.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/step3.py" afterPath="$PROJECT_DIR$/step3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/step5.py" afterPath="$PROJECT_DIR$/step5.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/step6.py" afterPath="$PROJECT_DIR$/step6.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/step7.py" afterPath="$PROJECT_DIR$/step7.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teste.py" afterPath="$PROJECT_DIR$/teste.py" />
     </list>
     <list id="0b0b9e93-88bd-4ee5-870d-7896ff7ed6c3" name="Failed commit: Default" comment="detcom" />
     <ignored path="detcom.iws" />
@@ -67,33 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="step7.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/step7.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1955">
-              <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
-              <folding>
-                <element signature="e#61#125#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="detcom.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detcom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="63" column="69" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
+            <state relative-caret-position="420">
+              <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="step3.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="step3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/step3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4080">
-              <caret line="240" column="34" selection-start-line="240" selection-start-column="34" selection-end-line="240" selection-end-column="34" />
+            <state relative-caret-position="366">
+              <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -109,19 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="step6.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/step6.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1904">
-              <caret line="114" column="33" selection-start-line="100" selection-start-column="8" selection-end-line="106" selection-end-column="38" />
-              <folding>
-                <element signature="e#23#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gncd.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gncd.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gncd.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
@@ -147,6 +91,30 @@
             <state relative-caret-position="1445">
               <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="step6.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/step6.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="862">
+              <caret line="114" column="33" selection-start-line="100" selection-start-column="8" selection-end-line="106" selection-end-column="38" />
+              <folding>
+                <element signature="e#23#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="step7.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/step7.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
+              <folding>
+                <element signature="e#61#125#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -193,9 +161,9 @@
         <option value="$PROJECT_DIR$/ap.py" />
         <option value="$PROJECT_DIR$/step6.py" />
         <option value="$PROJECT_DIR$/step5.py" />
-        <option value="$PROJECT_DIR$/detcom.py" />
         <option value="$PROJECT_DIR$/teste2.py" />
         <option value="$PROJECT_DIR$/teste.py" />
+        <option value="$PROJECT_DIR$/detcom.py" />
       </list>
     </option>
   </component>
@@ -783,36 +751,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/step3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4080">
-          <caret line="240" column="34" selection-start-line="240" selection-start-column="34" selection-end-line="240" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/arxivToDetCom.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1479">
           <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/detcom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="69" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/step7.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
-          <folding>
-            <element signature="e#61#125#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -857,9 +799,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/step7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
+          <folding>
+            <element signature="e#61#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/step6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
+        <state relative-caret-position="862">
           <caret line="114" column="33" selection-start-line="100" selection-start-column="8" selection-end-line="106" selection-end-column="38" />
           <folding>
             <element signature="e#23#50#0" expanded="true" />
@@ -871,6 +823,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="11" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detcom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/step3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
           <folding />
         </state>
       </provider>
