@@ -1,7 +1,7 @@
 # coding=utf-8
 __author__ = 'marcio'
 
-from lxml import  objectify
+from lxml import objectify
 
 class Etp3():
 
@@ -28,14 +28,14 @@ class Etp3():
     # Get all from specific type of vertice from the network
     def getVertices(self, vertice):
 
-        root = self.rootNetworkXmlFile
-        attributes = self.attribSelecteds[vertice]
-        vectorVertice = {}
-        #normalizationYear = 0.6855670 #((1949 - 1816)/(2010 - 1816))
-
-        # this "gambarra" is to solve the case when is put a same verticeType in the metaPath
+        # this "gambiarra" is to solve the case when is put a same verticeType in the metaPath
         # as is a Dictionary, the key must be unique, so this is de workaround...
         temp = vertice.split('-')
+
+        root = self.rootNetworkXmlFile
+        attributes = self.attribSelecteds[temp[0]]
+        vectorVertice = {}
+        #normalizationYear = 0.6855670 #((1949 - 1816)/(2010 - 1816))
 
         for metaNetwork in root.getchildren():
             for nodesType in metaNetwork.getchildren():
@@ -239,7 +239,7 @@ class Etp3():
     def buildRecordsForHomogeneousNetwork(self, fileToSaveRecords):
 
         #TODO mover para uma forma genérica
-        attrbLink = ['bagOfWords']
+        attrbLink = []
         root = self.rootNetworkXmlFile
 
         for metaNetwork in root.getchildren():
